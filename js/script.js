@@ -32,7 +32,7 @@ const displaySearchResult = phones => {
                 <h5 class="card-title">BRAND:${phone.brand}</h5>
                 <p class="card-text">NAME:${phone.phone_name},MODEL: ${phone.slug}</p>
                 <p class="card-text">This is the traditional brand of digital world. Communication and technology have been fast and grow with Apple.High tech and powerful chip</p>
-                <button onclick="loadPhoneModel('${phone.slug}')" class="btn btn-info">SEE MORE</button>
+                <button onclick="loadPhoneModel('${phone.slug}')" class="btn btn-info text-white">SEE MORE</button>
             </div>
          </div>`;
         searchResult.appendChild(div);
@@ -48,6 +48,7 @@ const loadPhoneModel = phoneModel => {
     const url = `  
     https://openapi.programming-hero.com/api/phone/${phoneModel}
     `;
+    console.log(phoneModel)
     fetch(url)
         .then(res => res.json())
         .then(data => showPhoneDetail(data.data))
